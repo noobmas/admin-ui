@@ -7,8 +7,8 @@ function App() {
        
       {/* logo start */}
         <div className="flex justify-center font-poppins tracking-wide text-primary text-4xl">
-          <span className="font-bold">FINE</span>
-          bank
+          <span className="font-bold">Post Card</span>
+          Rheno
           <span className="font-bold">.IO</span>
         </div> 
         {/* logo end */}
