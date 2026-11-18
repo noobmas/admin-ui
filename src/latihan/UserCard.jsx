@@ -1,9 +1,9 @@
-import React,{ useState } from 'react'
+import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 function UserCard(props){
     const {name, email, street, city, ...rest} = props;
     const [clicked, setClicked] = useState(false);
-   
 
 console.log(Object.entries(rest)) ; // Menampilkan properti tambahan yang diterima oleh komponen
 
@@ -29,12 +29,19 @@ console.log(Object.entries(rest)) ; // Menampilkan properti tambahan yang diteri
       ))}
 
       <button className={clicked ? "bg-special-green text-white p-2 rounded-md" : "bg-gray-01 text-white p-2 rounded-md"}
-       onClick={() => setClicked(true)}
+       onClick={handleClick}
         >
   {clicked ? "Tombol sudah diklik" : "Silakan Klik"}
 </button>
     </div>
   );
 }
+
+UserCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  street: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+};
 
 export default UserCard;
