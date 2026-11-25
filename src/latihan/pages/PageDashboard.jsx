@@ -1,18 +1,38 @@
-import React from "react";
-import TemplateMain from "../templates/TemplateMain";
-import AtomCard from "../atoms/AtomCard";
+import MainLayout from "../../components/Layouts/MainLayout";
+import Card from "../../components/Elements/Card";
 
-const PageDashboard = () => {
+function PageDashboard() {
+  const description =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, autem porro asperiores numquam sed veritatis debitis beatae amet laboriosam fuga pariatur sapiente suscipit culpa facere voluptatem. Repellat asperiores doloribus earum!";
+
   return (
-    <TemplateMain>
-      <div className="grid gap-6 sm:grid-cols-12 sm:grid-rows-3">
-        <AtomCard className="sm:col-span-4 sm:row-span-2 bg-white">Dashboard 1</AtomCard>
-        <AtomCard className="sm:col-span-4 bg-white">Dashboard 2</AtomCard>
-        <AtomCard className="sm:col-span-4 bg-white">Dashboard 3</AtomCard>
-        <AtomCard className="sm:col-span-8 bg-white">Dashboard 4</AtomCard>
+    <MainLayout>
+      <div className="grid min-h-[calc(100vh-4rem)] grid-cols-1 gap-4 p-4 sm:grid-cols-12 sm:grid-rows-[repeat(3,minmax(0,1fr))]">
+        <div className="sm:col-span-4">
+          <Card title="Total Balance" desc={description} />
+        </div>
+        <div className="sm:col-span-4">
+          <Card title="Goals" desc={description} />
+        </div>
+        <div className="sm:col-span-4">
+          <Card title="Upcoming Bill" link="/bills" desc={description} />
+        </div>
+        <div className="sm:col-span-4 sm:row-span-2">
+          <Card
+            title="Recent Transaction"
+            link="/transactions"
+            desc={description}
+          />
+        </div>
+        <div className="sm:col-span-8">
+          <Card title="Statistics" desc={description} />
+        </div>
+        <div className="sm:col-span-8">
+          <Card title="Expenses Breakdown" desc={description} />
+        </div>
       </div>
-    </TemplateMain>
+    </MainLayout>
   );
-};
+}
 
 export default PageDashboard;
